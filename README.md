@@ -12,19 +12,14 @@ nvidia-docker2を使ってコンテナ内でCUDAを動かす．
 
 ## Download method1
 
-    git clone https://github.com/himmel17/atg-cuda9.0.git .
+    git clone https://github.com/himmel17/atg-cuda9.0-base.git .
 
 ## Download method2
 
 こちらの方法だと~/.gitが含まれないことに注意．
 
-    curl -Lk https://github.com/himmel17/atg-cuda9.0/archive/master.tar.gz -o atg-cuda9.0.tar.gz
+    curl -Lk https://github.com/himmel17/atg-cuda9.0-base/archive/master.tar.gz -o atg-cuda9.0.tar.gz
 
 ## Build
 
-    docker build -t docker-cuda9.0:0.1 .
-
-## Run
-
-    docker run --runtime=nvidia -it -v /home1/0000133057/work/animalai:/home/tester/test --rm docker-cuda9.0:0.1 /bin/bash
-
+    docker build -t atg-cuda9.0-base:0.1 .

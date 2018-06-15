@@ -9,9 +9,6 @@ ENV https_proxy=https://proxy.atg.sony.co.jp:10080/
 
 ENV LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/cuda/lib64:/usr/local/lib:/usr/lib:/usr/lib/x86_64-linux-gnu:/lib64:/lib
 
-# TODO: https://qiita.com/DUxCA/items/7bf3862569cfca122d73 を参考に，
-#       必要なものがあったら追加していく．
-# TODO: 別のDockerfileでOpenCVをbuildする．
 RUN set -x && \
 	apt update -y && \
 	: "Python3環境を構築" && \

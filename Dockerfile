@@ -4,8 +4,8 @@ LABEL title="CUDA9.0 Base Image"
 LABEL version="0.1"
 LABEL description="CUDA9.0 Base Image"
 
-ENV http_proxy=http://proxy.atg.sony.co.jp:10080/
-ENV https_proxy=https://proxy.atg.sony.co.jp:10080/
+# ENV http_proxy=http://proxy.atg.sony.co.jp:10080/
+# ENV https_proxy=https://proxy.atg.sony.co.jp:10080/
 
 ENV LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/cuda/lib64:/usr/local/lib:/usr/lib:/usr/lib/x86_64-linux-gnu:/lib64:/lib
 

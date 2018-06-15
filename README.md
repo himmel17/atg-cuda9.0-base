@@ -1,4 +1,4 @@
-# atg-cuda9.0
+# atg-cuda9.0-base
 ## What is this?
 
 nvidia-docker2を使ってコンテナ内でCUDAを動かす．

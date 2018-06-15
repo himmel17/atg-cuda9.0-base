@@ -4,11 +4,6 @@ LABEL title="CUDA9.0 Base Image"
 LABEL version="0.1"
 LABEL description="CUDA9.0 Base Image"
 
-ARG user_name="tester"
-ARG user_id=1001
-ARG group_name="rsd"
-ARG group_id=1001
-
 ENV http_proxy=http://proxy.atg.sony.co.jp:10080/
 ENV https_proxy=https://proxy.atg.sony.co.jp:10080/
 
@@ -37,15 +32,3 @@ RUN : "前回buildしたキャッシュを無効にしてインストール" && 
 	: "Installing PyTorch for CUDA9.0" && \
 	pip3 install --no-cache-dir http://download.pytorch.org/whl/cu90/torch-0.4.0-cp35-cp35m-linux_x86_64.whl && \
 	pip3 install --no-cache-dir torchvision
-
-# ユーザ設定
-# ユーザID,グループIDをパラメータにすることでホストボリュームに対する操作を
-# ユーザ権限で実行できるようにしている．
-RUN groupadd -g ${group_id} ${group_name} && \
-	useradd --create-home --shell /bin/bash \
-	--uid ${user_id} --gid ${group_id} --home-dir /home/${user_name} \
-	${user_name}
-
-USER ${user_name}
-WORKDIR /home/${user_name}
-ENV HOME /home/${user_name}
